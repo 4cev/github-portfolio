@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    char studentNumber[50], lastName[50], firstName[50];
+    float lectureComponent, lectureGrade;
+    float laboratoryComponent, laboratoryGrade;
+    float finalGrade;
+
+    printf("==================================================\n");
+    printf("        Our Lady of Fatima University\n");
+    printf("        College of Computer Studies\n");
+    printf("               S.Y 2025 - 2026\n");
+    printf("==================================================\n\n");
+
+    printf("Student Number: ");
+    scanf(" %[^\n]", studentNumber);
+
+    printf("Last Name: ");
+    scanf(" %[^\n]", lastName);
+
+    printf("First Name: ");
+    scanf(" %[^\n]", firstName);
+
+    printf("\n-------------------- LECTURE GRADE --------------------\n");
+    float prelimExam, midtermExam, finalExam, assessmentTask;
+    printf("Prelim Exam: ");
+    scanf("%f", &prelimExam);
+
+    printf("Midterm Exam: ");
+    scanf("%f", &midtermExam);
+
+    printf("Final Exam: ");
+    scanf("%f", &finalExam);
+
+    printf("Assessment Task: ");
+    scanf("%f", &assessmentTask);
+
+    printf("\n------------------ LABORATORY GRADE ------------------\n");
+    float labPrelimExam, labMidtermExam, labFinalExam, machineProblems;
+    printf("Lab Prelim Exam: ");
+    scanf("%f", &labPrelimExam);
+
+    printf("Lab Midterm Exam: ");
+    scanf("%f", &labMidtermExam);
+
+    printf("Lab Final Exam: ");
+    scanf("%f", &labFinalExam);
+
+    printf("Machine Problems: ");
+    scanf("%f", &machineProblems);
+
+    lectureComponent = (prelimExam * 0.20f) + (midtermExam * 0.20f) +
+                        (finalExam * 0.20f) + (assessmentTask * 0.40f);
+    lectureGrade = lectureComponent * 0.50f;
+
+    laboratoryComponent = (labPrelimExam * 0.20f) + (labMidtermExam * 0.20f) +
+                           (labFinalExam * 0.20f) + (machineProblems * 0.40f);
+    laboratoryGrade = laboratoryComponent * 0.50f;
+
+    finalGrade = lectureGrade + laboratoryGrade;
+
+    printf("\n==================================================\n");
+    printf("        Our Lady of Fatima University\n");
+    printf("         College of Computer Studies\n");
+    printf("               S.Y 2025 - 2026\n");
+    printf("==================================================\n\n");
+
+    printf("Student Number: %s\n", studentNumber);
+    printf("Last Name: %s\n", lastName);
+    printf("First Name: %s\n\n", firstName);
+
+    printf("-------------------- LECTURE GRADE --------------------\n\n");
+    printf("Prelim Exam:       %.2f\n", prelimExam);
+    printf("Midterm Exam:      %.2f\n", midtermExam);
+    printf("Final Exam:        %.2f\n", finalExam);
+    printf("Assessment Task:   %.2f\n\n", assessmentTask);
+
+    printf("------------------ LABORATORY GRADE ------------------\n\n");
+    printf("Lab Prelim Exam:   %.2f\n", labPrelimExam);
+    printf("Lab Midterm Exam:  %.2f\n", labMidtermExam);
+    printf("Lab Final Exam:    %.2f\n", labFinalExam);
+    printf("Machine Problems:  %.2f\n\n", machineProblems);
+
+    printf("==================================================\n\n");
+    printf("LECTURE GRADE:     %.2f\n", lectureGrade);
+    printf("LABORATORY GRADE:  %.2f\n", laboratoryGrade);
+    printf("FINAL GRADE:       %.2f\n", finalGrade);
+    printf("==================================================\n");
+
+    return 0;
+}
