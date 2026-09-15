@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char patientName[100];
+    int days, amoxicillinQuantity, paracetamolQuantity;
+    double roomRate, laboratoryFee, professionalFee;
+    double medicalInsuranceFee, amountReceived;
+
+    const double amoxicillinUnitPrice = 45.00;
+    const double paracetamolUnitPrice = 12.00;
+
+    double roomFee, amount1, amount2, totalAmount;
+    double grandTotal, change;
+
+printf("\n ========================================== \n");
+    printf("           HOSPITAL BILLING SYSTEM     \n\n");
+
+    printf("Patient's Name: ");
+    fgets(patientName, sizeof(patientName), stdin);
+    patientName[strcspn(patientName, "\n")] = '\0';
+
+    printf("No. of days: ");
+    scanf("%d", &days);
+
+    printf("Room Rate: ");
+    scanf("%lf", &roomRate);
+
+    printf("Laboratory Fee: ");
+    scanf("%lf", &laboratoryFee);
+
+    printf("Professional Fee: ");
+    scanf("%lf", &professionalFee);
+
+    printf("\nAmoxicillin Unit Price: %.2f\n", amoxicillinUnitPrice);
+    printf("Quantity: ");
+    scanf("%d", &amoxicillinQuantity);
+
+    printf("\nParacetamol Unit Price: %.2f\n", paracetamolUnitPrice);
+    printf("Quantity: ");
+    scanf("%d", &paracetamolQuantity);
+
+    printf("\nMedical Insurance Fee: ");
+    scanf("%lf", &medicalInsuranceFee);
+
+    printf("Amount Received: ");
+    scanf("%lf", &amountReceived);
+
+    roomFee = days * roomRate;
+    amount1 = amoxicillinUnitPrice * amoxicillinQuantity;
+    amount2 = paracetamolUnitPrice * paracetamolQuantity;
+    totalAmount = roomFee + laboratoryFee + professionalFee + amount1 + amount2;
+    grandTotal = totalAmount - medicalInsuranceFee;
+
+    
+    change = grandTotal - amountReceived;
+
+    printf("\n ========================================== \n");
+    printf("           HOSPITAL BILLING SYSTEM     \n\n");
+    printf("Patient's Name: %s\n", patientName);
+    printf("No. of days: %d\n", days);
+    printf("Room Rate: %.2f\n", roomRate);
+    printf("Room Fee: %.2f\n", roomFee);
+    printf("Laboratory Fee: %.2f\n", laboratoryFee);
+    printf("Professional Fee: %.2f\n", professionalFee);
+    printf("\nAmoxicillin Unit Price: %.2f\n", amoxicillinUnitPrice);
+    printf("Quantity: %d\n", amoxicillinQuantity);
+    printf("Amount1: %.2f\n", amount1);
+    printf("\nParacetamol Unit Price: %.2f\n", paracetamolUnitPrice);
+    printf("Quantity: %d\n", paracetamolQuantity);
+    printf("Amount2: %.2f\n", amount2);
+    printf("\nTotal Amount: %.2f\n", totalAmount);
+    printf("Medical Insurance Fee: %.2f\n", medicalInsuranceFee);
+    printf("Grand Total: %.2f\n", grandTotal);
+    printf("Amount Received: %.2f\n", amountReceived);
+    printf("Change: %.2f\n", change);
+
+    return 0;
+}
+
